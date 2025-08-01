@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test to kill</title>
+</head>
+<body>  <!--My explaination below(what i understood by reading and writing this code.) -->
+    <script>
+        fetch('/githubname.json')    //made a HTTP request to read a local JSON file .The file is read by the function -> fetch .
+
+        .then(resp=>resp.json())    //response received from fetch and converted to JSON
+        
+        .then(user=>fetch(`https://api.github.com/users/${user.name}`)) //use the response from the previous JSON to make another fetch request to Github's API.
+
+        .then(resp=>resp.json()) // converts Github API response to JSON format
+
+        .then(githubuserdisplay=>new Promise(function(resolve,reject){  // new promise is created to handle image display and timing...
+
+            let img=document.createElement('img'); //img tag created using js
+            img.src=githubuserdisplay.avatar_url;  //image source specified as 'avatar_url' inside the user's github api reference in the JSON file.
+            document.body.append(img);   //add the img tag to the webpage body for 5 seconds as specified in the code below
+            setTimeout(()=>{   
+                img.remove();  //remove the image
+                resolve(githubuserdisplay);  // resolve the promise with 'github user data'(argument-> "githubuserdisplay")
+            },5000); //time = 5000 ms= 5 seconds
+        })).then(githubuserdisplay=>alert("You've completed the work!!dude!!")); //after the 5s time runs out -> execute this block of '.then' .
+    </script>
+</body>
+</html>
