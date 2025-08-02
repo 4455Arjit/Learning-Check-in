@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P_API use of ".ALL"</title>
+</head>
+<body>
+    <script>
+        let usr_names=["4455Arjit","harshsapla","Anshu4o4"]; //Array of names declared (2 working and 1 non-working)
+
+        let request=usr_names.map(usr_name=>fetch(`https://api.github.com/users/${usr_name}`)); // request variable declared 
+
+        // in order to assign usernames in map format 1 by 1 in place of 'usr_name' inside fetch ->which is using formatting method of string.
+
+        Promise.all(request)
+
+        .then(responses=>{
+            for(let response in responses){
+                console.log(`${response.url} : ${response.status}`);
+            }
+            return responses;
+        })
+        .then(responses=>Promise.all(responses.map(resP=>resP.json())))
+        .then(Users=>Users.forEach(User=>console.log(User.name)));
+        
+
+
+    </script>
+</body>
+</html>
