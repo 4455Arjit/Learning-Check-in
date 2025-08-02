@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Ending part</title>
+</head>
+<body>
+    <script>
+        Promise.all([   //.all is given to get the full array of values , new Promise is created and resolved once to resolve all that are in the row
+            new Promise((resolve,reject)=>{
+                setTimeout(()=>resolve(1),4000)  //after 4 seconds -> [1,2,3] alert on page
+            }),2,3
+        ]).then(alert);
+    </script>
+</body>
+</html>
