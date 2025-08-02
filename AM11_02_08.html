@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P_API use of ".ALL"</title>
+</head>
+<body>
+    <script>
+    //     let usr_names=["4455Arjit","non_existing","Anshu4o4"]; //Array of names declared (2 working and 1 non-working)
+
+    //     let request=usr_names.map(usr_name=>fetch(`https://api.github.com/users/${usr_name}`)); // request variable declared 
+
+    //     // in order to assign usernames in map format 1 by 1 in place of 'usr_name' inside fetch ->which is using formatting method of string.
+
+    //     Promise.all(request)
+
+    //     .then(responses=>{
+    //         for(let response of responses){
+    //             console.log(`${response.url} : ${response.status}`);
+    //         }
+    //         return responses;
+    //     })
+    //     .then(responses=>Promise.all(responses.map(resP=>resP.json())))
+    //     .then(Users=>Users.forEach(User=>console.log(User.name)));
+        
+    //=====================================Understanding of Code========================================================
+        let u_names=['4455Arjit','iliakan','harshsapla'];
+        let request= u_names.map(u_name=>fetch(`https://api.github.com/users/${u_name}`));
+        //this line is equivalent to-> map(function(u_name){ fetch (`link $ {abc}`)})
+        //map trouble of iteration (solved)
+        Promise.all(request)
+        .then(function(req_response){   //arrow trouble (Solved with simple function format-so i won't get confused next time)
+            for(let sub_req of req_response){
+                console.log(`${sub_req.url} : ${sub_req.status}`);
+            }
+            return req_response;  //this is used to pass the values like a BATON in a relay to the next ".then"
+            // passes responses to next step
+        })
+        .then(function(req_response){ //Removed the arrow functions for comparison only
+            return Promise.all(
+                req_response.map(function(resp){
+                return resp.json()
+            })
+        )
+        })
+        .then(all_users=>{all_users.forEach(user=>{console.log(user.name)});
+        }); //Everyone in the username array -> Names are logged to console .
+
+    </script>
+</body>
+</html>
