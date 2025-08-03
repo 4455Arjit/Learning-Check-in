@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice - REPS</title>
+</head>
+<body>
+    <script>
+        let url_s=[
+            'https://api.github.com/users/iliakan',
+            'https://api.github.com/users/remy',
+            'https://api.github.com/users/jeresig'
+        ];        //We got all the api links ...
+        let request_s= url_s.map(ur_l=>fetch(ur_l));     //We called the urls separately by a map Function
+
+        Promise.all(request_s)                          //here we cooked the requests into one PROMISE.ALL function.
+
+//the response must load to the point ...(still thinking)
+.then(responses=>Promise.all(responses.map(r=>r.json())))
+.then(g_tusers=>new Promise((resolve,reject)=>{ 
+    for(let ur_l=0;ur_l<3;ur_l++){
+        //I applied FOR loop here. 
+        let image= document.createElement('img');  //Image tag created
+        image.src=g_tusers[ur_l].avatar_url;    //Image source provided from fetched JSON 
+        image.className="imagedot";  //classname assigned to the Image tag that just created
+        document.body.append(image);  //Image is appended inside the webpage BODY.
+        setTimeout(()=>{   //Images will disappear after sometime(8 seconds for now)
+            image.remove();
+            resolve(g_tusers);  //Promise resolved
+        },8000);
+    }
+
+        }));
+    </script>
+</body>
+</html>
