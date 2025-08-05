@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json things</title>
+</head>
+<body>
+    <p id="testing_json"></p>
+    <script>
+        let text_json= '{ "legends":['+
+        '{"first":"nappa","last":"saiyan" },'+               //Everything must in strings for a JSON string
+        '{"first":"Pagal","last":"eating machine"},'+
+        '{"first":"pata nai","last":"hehe"}]}';
+const objec_t= JSON.parse(text_json);
+document.getElementById("testing_json").innerHTML=
+objec_t.legends[1].first + " " + objec_t.legends[0].first;
+    </script>
+</body>
+</html>
