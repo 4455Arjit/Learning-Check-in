@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>This example calls the fullName method of person, using it on person1:
+</p>
+
+<p id="ar_id"></p>
+<p id="ar_id2"></p>
+
+<script>
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person1 = {
+  firstName:"pagal",
+  lastName: "hai ye"
+}
+const person2 = {
+  firstName:"This man",
+  lastName: "..the one watching the screen"
+}
+document.getElementById("ar_id").innerHTML = person.fullName.call(person1); 
+document.getElementById("ar_id2").innerHTML= person.fullName.call(person2);
+
+</script>
+<p>This is the example of using CALL() function with Objects + functions as to make them working or COMPLETE.</p>
+
+</body>
+</html>
