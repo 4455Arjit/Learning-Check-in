@@ -1,0 +1,26 @@
+<!-- .. = root folder
+. = current folder which youre in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re->vision</title>
+</head>
+<body>
+    <p id="revision"></p>
+    <script>
+        function being(fname,lname,age,power){
+            this.firstname=fname;
+            this.lastname=lname;
+            this.age=age;
+            this.powerlevel=power;
+            this.nationality = "English"; //set a default value
+        }
+        const human=new being("human","being",56,"powerlevel=0");
+        const warrior=new being("Arjit","HyperActive",19, "Powerlevel= 9999999");
+        document.getElementById("revision").innerHTML=(human.firstname + human.lastname +" (Im not) ...."+ warrior.firstname + ", "+ "powerlevel is :" + warrior.powerlevel +"...Default value set here: "+warrior.nationality) ;
+    </script>
+</body>
+</html>
