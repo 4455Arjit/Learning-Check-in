@@ -1,0 +1,8 @@
+I downloaded a Udemy course of FullStack development (latest:=Feb_2025)
+-> I conpleted 10 folders out of 44 on 9DD/8MM/2025YYYY
+
+-> I revised these in JS->JS
+-> I revised Objects in JS-> Definitions, constructors, "this keyword",Prototypes,Methods,Properties,Get/Set,Protection -> DONE!!! Objects👍
+-> Classes , Sets & Maps-👍 also Done 
+-> Revised some PHP that i learned from 4 Aug to 8 Aug.
+-> and I am not Comfortable with "Java" <- Brain starts to hang. 
