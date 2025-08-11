@@ -7,3 +7,7 @@ I downloaded a Udemy course of FullStack development (latest:=Feb_2025)
 -> Revised some PHP that i learned from 4 Aug to 8 Aug.
 -> and I am not Comfortable with "Java" <- Brain starts to hang. 
 : check it (for me): https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_groupby
+ 
+
+ :WHAT i did today------------------------------11/08/2025
+ RegEXp....Regular Expressions : i ignored them cuz they were making no sense...too difficult to remember..
