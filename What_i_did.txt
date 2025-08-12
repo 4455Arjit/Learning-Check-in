@@ -11,3 +11,12 @@ I downloaded a Udemy course of FullStack development (latest:=Feb_2025)
 
  :WHAT i did today------------------------------11/08/2025
  RegEXp....Regular Expressions : i ignored them cuz they were making no sense...too difficult to remember..
+ : Remember Not to use parenthesis when passing a function as an argument to a function.
+
+ --------------UPDATE------------------
+ ->12-08-2025:(updated 3 August 2025) I got a 30GB worth of this course: 
+ The Ultimate React Course 2025: React, Next.js, Redux & More.
+  Master modern React from beginner to advanced! Context API, 
+  React Query, Redux Toolkit, Tailwind, advanced patterns 
+  and 20Gigs of this too: FreeCourseSite.com-Udemy - Complete React, Next.js & TypeScript Projects Course
+   ....i will end them before the end of this month - AUGUST
