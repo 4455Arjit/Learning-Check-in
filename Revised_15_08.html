@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid rev and something else</title>
+</head>
+<body>
+    <!-- <div class="cont">
+        <p>asjkldfja</p>
+        <p>lskjflsakjf</p>
+        <p>f;alksjdfl;ka</p>
+        <p>alskjf;ajs;</p>
+    </div>
+    <style>
+        .cont{
+            background-color: blue;
+            display: grid;
+            grid-template-columns: 15vh 15vh;
+            grid-template-rows:10vh 10vh;
+            gap:1vh;
+            border: 10px solid black;
+        }
+        p{
+            border:6px solid black;
+        }
+    </style> -->
+    <p id="level"></p>
+    <p id="level2"></p>
+    <script>
+        function displayres(levvel){
+            document.getElementById("level").innerHTML=levvel;
+         }
+         function subit(a,b){
+            let d=a-b;
+            return d;
+         }
+    
+            let resul=subit(5444,444);
+            displayres(resul);
+
+            function sip(val){
+                document.getElementById("level2").innerHTML=val;
+            }
+            function summ(a,b,calling){
+                let d=a+b;
+                calling(d);
+            }
+            summ(3334,6666,sip);
+        
+            </script>
+            <style>
+                body{background-color: rgb(0, 0, 0);
+                }
+                #level,#level2,#lastone{
+                    color:white;
+                    background-color: black;
+                }
+                #lastone_inPrac{
+                    color:chocolate;
+                    background-color: green;
+                    height:300px;
+                    width:300px;
+                    animation:pagal 4s infinite linear;
+                }
+                @keyframes pagal{
+                    10%{
+                        color:pink;
+                        transform:translateX(40px) rotate(10deg);
+                    }
+                    30%{
+                        transform: translateX(-80px) rotate(-20deg);
+                    }
+                    50%{
+                        transform:translateY(120px) rotate(90deg);
+                    }
+                    80%{
+                        transform:translateX(200px) rotate(180deg);
+                    }
+                    100%{
+                        transform-origin: bottom right;
+                    }
+                }
+                @keyframes pagal_2 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1) skew(0deg, 0deg); color: red; }
+    10% { transform: translate(50px, -20px) 
+        rotate(45deg) scale(1.2) skew(10deg, 5deg);
+         color: yellow; }
+    25% { transform: translate(-70px, 30px) rotate(-60deg) scale(0.8)
+         skew(-15deg, 20deg); 
+         color: lime; }
+    50% { transform: translate(100px, 100px) rotate(180deg) scale(1.5) 
+        skew(30deg, -25deg); 
+        color: cyan; }
+    75% { transform: translate(-120px, -50px) rotate(270deg) scale(0.5) 
+        skew(-30deg, 15deg); 
+        color: magenta; }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1) 
+        skew(0deg, 0deg); 
+        color: white; }
+}
+
+.cursed {
+    display: inline-block;
+    font-size: 40px;
+    animation: pagal_2 2s infinite linear;
+}
+
+            </style>
+            <div class="cursed">💀Pagal Block</div>
+
+            
+            <p id="lastone"></p>
+            <p id="lastone_inPrac"></p>
+            <script>
+                const numbars=[4,1,-2,4,5,67,78,4,-34,-33,5,-7,3]; //Array declared
+                
+                //this line is equivalent to -> function(x){ return x>=0;}
+                const positiveNums=removeNeg(numbars,(x)=> x>=0);  
+                    //called function removeNeg that is declared after calling ...se below
+                    //function contains  
+                document.getElementById("lastone").innerHTML=positiveNums;
+                function removeNeg(numbs,callit){
+                    const myArr=[];
+                    for(const x of numbs){
+                        if(callit(x)){
+                            myArr.push(x);
+                        }
+                    }
+                    return myArr;
+                }
+
+
+                const saiyan_powers=[44,44444,4,4556,444,44444444,44444356456,6546345634,4653456,5646,635454,5436];
+                const powerup=supersaiyan(saiyan_powers,(p_level)=> p_level>=20000);
+                document.getElementById("lastone_inPrac").innerHTML=powerup;
+                function supersaiyan(Plevels,increasing_level){
+                    const power_s=[];
+                    for(const p_level of Plevels){
+                        if(increasing_level(p_level)){
+                            power_s.push(p_level);
+                        }
+                    }
+                    return power_s;
+                }
+            </script>
+</body>
+</html>
