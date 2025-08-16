@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JS</title>
+</head>
+<body>
+    <script>
+        function test2(ageInp){
+        let user={
+        _age:0,
+        get age(){
+            return this._age;  //We use "_" with object variables
+                    // to indicate that it is a PRIVATE PROPERTY to "Get and Set" ..only
+                    //  these two(dudes) methods can access it.
+        },
+        set age(value){
+            if(value<0){
+                console.log("Age cann't be negative!");
+            }else{
+                this._age=value;
+            }
+        }
+    };
+    user.age=ageInp;
+    console.log("age is :"+user.age);
+}
+
+// test2(prompt("Enter age : "));
+class Species{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+}
+const saiyan=new Species("Saiyan",19);
+console.log(saiyan.name + " "+ saiyan.age);
+const humans=new Species("Human Being",100);
+console.log(humans.name + " "+ humans.age);
+//===========================================================================
+class Bugatti{
+    constructor(cname,cAge){
+        this.cname=cname;
+        this.cAge=cAge;
+    }
+    calc(x){
+        return x-this.cAge;
+    }
+}
+const date=new Date();
+let saal=date.getFullYear();
+const myCar= new Bugatti("Bugatti La voiture Noire",2023);
+console.log("Your car is:"+myCar.cname+ " and age is "+myCar.calc(saal));
+class Model extends Bugatti{
+    constructor(cname,rpm){
+        super(cname);
+        this.power=rpm;
+    }
+    display(){
+        return this.cname + " has RPM of : "+this.power;;
+    }
+}
+const caar=new Model("Koenigsegg",5888);
+console.log(caar.display());
+    </script>
+</body>
+</html>
