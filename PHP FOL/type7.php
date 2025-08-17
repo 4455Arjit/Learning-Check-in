@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Test I did Myself</title>
 </head>
-<body><form action="type7.php" method="POST">
+<body><form action="My TestPHP.php" method="POST">
 
     <input type="radio" name="Card" value="Card1 A"> Card 1
     <br>
