@@ -57,7 +57,6 @@ if($_SERVER["REQUEST_METHOD"]="POST"){
             echo "Select a Card -> then proceed to Submit";
         }
 
-
     }
 }
 ?>
