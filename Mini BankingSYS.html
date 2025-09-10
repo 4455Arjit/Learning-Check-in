@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Backing System</title>
+</head>
+<body>
+    
+    <script>
+        class Acc{
+    constructor(user,money,...transaction){
+        this.person=user;
+        this.cash=money;
+        this.transaction_history=transaction;//Received an array: looped over it and then executed the transactions according to order and added to "deposit" and "withdraw";
+        for(let transactions in this.transaction_history){
+            // console.log(this.transaction_history[transactions]);
+            if(this.transaction_history[transactions]<0){
+                console.log(this.transaction_history[transactions]+" Deducted");
+            }
+            else{
+                console.log(this.transaction_history[transactions]+" Added");
+            }
+        }
+    }                  
+    get_details(){
+        console.log("User Name is : "+this.person);
+        console.log("Current balance is :"+this.cash);
+        console.log("Transaction History is as follows: "+this.transaction_history);
+        console.log(this.transaction_history.length);
+        return this.person, this.cash ,this.transaction_history;
+    }
+    deposit(amount){
+        this.cash+=amount;
+        console.log('+'+amount + " is Deposited! ")
+        this.transaction_history.unshift(amount);
+    }
+    withdraw(amount){
+        if(amount<this.cash){
+        
+            this.cash-=amount;
+            console.log("-"+amount + " is Withdrawed! ");
+            this.transaction_history.unshift(-amount);
+
+        }else{
+            console.log("Your WITHDRAWL amount is Higher than the BALANCE in your CURRENT Bank Account")
+        }
+    }
+    get_transaction_history(){
+            // for(let his_start=0;his_start<=this.transaction_history.length;his_start++){
+            //     console.log(this.transaction_history);
+            // }
+            for(let transactions in this.transaction_history){
+            //    console.log(this.transaction_history[transactions]);
+               if(this.transaction_history[transactions]<0){
+                console.log(`The amount of ${this.transaction_history[transactions]} $ is deducted from account.`)
+               }else{
+                console.log(`The $ ${this.transaction_history[transactions]} are added to the account`)
+               }
+            }
+        }
+    }
+let Person_1= new Acc("Arjit",10000000,10000000);
+Person_1.get_details();
+Person_1.deposit(5500);
+Person_1.withdraw(4999099);
+Person_1.get_details();
+Person_1.get_transaction_history();
+bank_loop=true;
+while(bank_loop){
+    if(bank_loop==false){
+        break
+    }else{
+        console.log(`List of methods to Use:USE THE NUMBERS TO SWITCH Between them:
+            1->Deposit.
+            2->Withdraw.
+            3->Get Details about your account.
+            4->Get Transaction History
+            5->Exit The Application`);
+            let user_inp=prompt("Enter the Method you want to use Via Number as given: ");
+            switch(user_inp){
+                case 1:
+                    Person_1.deposit(prompt("Enter the Amount you want to deposit : "));
+                    break
+                case 2:
+                    Person_1.withdraw(prompt("Enter the Amount you want to Withdraw from your Account:"));
+                    break
+                case 3:
+                    Person_1.withdraw(prompt("Enter the Amount you want to Withdraw from your Account:"));
+                    break
+                case 4:
+                    Person_1.withdraw(prompt("Enter the Amount you want to Withdraw from your Account:"));
+                    break
+                }
+
+
+    }
+}
+    </script>
+</body>
+</html>
+
