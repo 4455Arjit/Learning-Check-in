@@ -1,0 +1,13 @@
+from numpy import random
+x=random.randint(100)
+print(x)
+y=random.rand()
+print(y)
+z=random.randint(100,size=(5))
+print(z)
+a=random.rand(3,5)
+print(a)
+b=random.randint(10,size=(2,5))
+print(b)
+c=random.choice([4,5,6,7],size=(4,6))
+print(c)
